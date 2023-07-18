@@ -1,0 +1,11 @@
+type Query {
+    me: User!
+    otherUser: User!
+}
+
+
+type User {
+    id: ID!
+    name: String
+    best_friend: User
+}

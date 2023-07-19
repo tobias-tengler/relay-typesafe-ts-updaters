@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<41505a2ece915e1c408407871ca1c5d4>>
+ * @generated SignedSource<<cf23225a8cd46ce0176e25e7ef5c478d>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -17,7 +17,7 @@ export type AppUpdatableAssignQuery$data = {
     set best_friend(value: {
       readonly __typename: "User";
       readonly __id: string;
-      readonly " $fragmentSpreads": FragmentRefs<"testAssignableUser">;
+      readonly " $fragmentSpreads": FragmentRefs<"AppAssignableUser">;
     } | null);
   };
   set me(value: null | undefined);
@@ -53,7 +53,7 @@ const node: ConcreteUpdatableQuery = {
               {
                 "args": null,
                 "kind": "FragmentSpread",
-                "name": "testAssignableUser"
+                "name": "AppAssignableUser"
               }
             ],
             "storageKey": null
@@ -68,6 +68,6 @@ const node: ConcreteUpdatableQuery = {
   "kind": "UpdatableQuery"
 };
 
-(node as any).hash = "d81220cf1d29b39fa521822275f35acc";
+(node as any).hash = "cd353bb97b8354b950635eba98dd7d71";
 
 export default node;

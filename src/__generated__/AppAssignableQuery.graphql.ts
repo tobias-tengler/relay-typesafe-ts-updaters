@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<1367ec9cc082cbea315b0a522b63e370>>
+ * @generated SignedSource<<ce9f72d5df6761ba85bda66dc797b97f>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -22,7 +22,7 @@ export type AppAssignableQuery$data = {
     readonly __typename: "User";
     readonly __id: string;
     readonly name: string | null;
-    readonly " $fragmentSpreads": FragmentRefs<"testAssignableUser">;
+    readonly " $fragmentSpreads": FragmentRefs<"AppAssignableUser">;
   };
 };
 export type AppAssignableQuery = {
@@ -95,7 +95,7 @@ return {
           {
             "args": null,
             "kind": "FragmentSpread",
-            "name": "testAssignableUser"
+            "name": "AppAssignableUser"
           },
           (v1/*: any*/),
           {
@@ -161,16 +161,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "ae9283c5568b64310c3196844bc59f48",
+    "cacheID": "53ab37b482db3aabfac0ff5a62a4bbb1",
     "id": null,
     "metadata": {},
     "name": "AppAssignableQuery",
     "operationKind": "query",
-    "text": "query AppAssignableQuery {\n  me {\n    name\n    best_friend {\n      name\n      id\n    }\n    id\n  }\n  otherUser {\n    name\n    ...testAssignableUser\n    id\n  }\n}\n\nfragment testAssignableUser on User {\n  __typename\n}\n"
+    "text": "query AppAssignableQuery {\n  me {\n    name\n    best_friend {\n      name\n      id\n    }\n    id\n  }\n  otherUser {\n    name\n    ...AppAssignableUser\n    id\n  }\n}\n\nfragment AppAssignableUser on User {\n  __typename\n}\n"
   }
 };
 })();
 
-(node as any).hash = "942a4f29473482c73727a57f2a46d101";
+(node as any).hash = "fddc811af01640d116b06b4eda9401d0";
 
 export default node;

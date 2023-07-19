@@ -44,7 +44,9 @@ function UpdatableQuery() {
   </div>
 }
 
-
+graphql`fragment AppAssignableUser on User @assignable {
+  __typename
+}`
 
 function Assignable() {
   const queryData = useLazyLoadQuery<AppAssignableQuery>(graphql`query AppAssignableQuery {
@@ -56,7 +58,7 @@ function Assignable() {
     }
     otherUser {
       name
-      ...testAssignableUser
+      ...AppAssignableUser
     }
   }`, {})
 
@@ -67,7 +69,7 @@ function Assignable() {
       const {updatableData} = store.readUpdatableQuery<AppUpdatableAssignQuery>(graphql`query AppUpdatableAssignQuery @updatable {
         me {
           best_friend {
-           ...testAssignableUser
+           ...AppAssignableUser
           }
         }
       }`, {})

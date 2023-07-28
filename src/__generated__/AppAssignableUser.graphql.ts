@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<77d8e6fd3eb697b961ff39200077a4b1>>
+ * @generated SignedSource<<e3465b3f6d31f0e514092bfe4eb04037>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -21,3 +21,9 @@ export function validate(value: {
 } {
   return value.__typename === 'User' ? value : false;
 }
+
+const node: any = {};
+
+(node as any).hash = "a1488fcf5af224c81a9df5a6d12e1b14";
+
+export default node;

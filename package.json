@@ -8,7 +8,7 @@
     "build": "relay-compiler --validate && tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "relay": "relay-compiler --watch"
+    "relay": "relay-compiler"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -28,7 +28,7 @@
     "eslint": "^8.44.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
-    "relay-compiler": "15.0.0",
+    "relay-compiler": "^0.0.0-main-72f38f5b",
     "typescript": "^5.0.2",
     "vite": "^4.4.0",
     "vite-plugin-relay": "2.0.0"

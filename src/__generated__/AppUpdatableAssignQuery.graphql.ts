@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<cf23225a8cd46ce0176e25e7ef5c478d>>
+ * @generated SignedSource<<616285546532bc0bc6fb6af78bb6775b>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,15 +10,15 @@
 
 import { UpdatableQuery, ConcreteUpdatableQuery } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type AppUpdatableAssignQuery$variables = {};
+export type AppUpdatableAssignQuery$variables = Record<PropertyKey, never>;
 export type AppUpdatableAssignQuery$data = {
   get me(): {
-    get best_friend(): {} | null;
+    get best_friend(): Record<PropertyKey, never> | null | undefined;
     set best_friend(value: {
       readonly __typename: "User";
       readonly __id: string;
       readonly " $fragmentSpreads": FragmentRefs<"AppAssignableUser">;
-    } | null);
+    } | null | undefined);
   };
   set me(value: null | undefined);
 };

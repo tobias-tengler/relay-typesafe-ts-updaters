@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<95af28cec4a05cc0be293cc1fac6d097>>
+ * @generated SignedSource<<b1f38e12bb03a2aad4c3bd48b2f9e962>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,10 +9,10 @@
 // @ts-nocheck
 
 import { UpdatableQuery, ConcreteUpdatableQuery } from 'relay-runtime';
-export type AppUpdatableQuery$variables = {};
+export type AppUpdatableQuery$variables = Record<PropertyKey, never>;
 export type AppUpdatableQuery$data = {
   get me(): {
-    name: string | null;
+    name: string | null | undefined;
   };
   set me(value: null | undefined);
 };

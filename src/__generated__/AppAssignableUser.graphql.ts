@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<e3465b3f6d31f0e514092bfe4eb04037>>
+ * @generated SignedSource<<df5fb38a4764c71c2d464e73e849ce0f>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -9,6 +9,12 @@
 // @ts-nocheck
 
 import { FragmentRefs } from "relay-runtime";
+
+const node: any = {};
+
+(node as any).hash = "a1488fcf5af224c81a9df5a6d12e1b14";
+
+export default node;
 
 export function validate(value: {
   readonly __typename: string;
@@ -21,9 +27,3 @@ export function validate(value: {
 } {
   return value.__typename === 'User' ? value : false;
 }
-
-const node: any = {};
-
-(node as any).hash = "a1488fcf5af224c81a9df5a6d12e1b14";
-
-export default node;

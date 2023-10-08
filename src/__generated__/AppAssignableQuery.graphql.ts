@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<ce9f72d5df6761ba85bda66dc797b97f>>
+ * @generated SignedSource<<897e9cb55439d3555997164373857652>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,18 +10,18 @@
 
 import { ConcreteRequest, Query } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type AppAssignableQuery$variables = {};
+export type AppAssignableQuery$variables = Record<PropertyKey, never>;
 export type AppAssignableQuery$data = {
   readonly me: {
     readonly best_friend: {
-      readonly name: string | null;
-    } | null;
-    readonly name: string | null;
+      readonly name: string | null | undefined;
+    } | null | undefined;
+    readonly name: string | null | undefined;
   };
   readonly otherUser: {
     readonly __typename: "User";
     readonly __id: string;
-    readonly name: string | null;
+    readonly name: string | null | undefined;
     readonly " $fragmentSpreads": FragmentRefs<"AppAssignableUser">;
   };
 };

@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<616285546532bc0bc6fb6af78bb6775b>>
+ * @generated SignedSource<<db2831f2ab3345345b723d414ef0722a>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -10,8 +10,8 @@
 
 import { UpdatableQuery, ConcreteUpdatableQuery } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
-export type AppUpdatableAssignQuery$variables = Record<PropertyKey, never>;
-export type AppUpdatableAssignQuery$data = {
+export type AppUpdatableAssignFriendQuery$variables = Record<PropertyKey, never>;
+export type AppUpdatableAssignFriendQuery$data = {
   get me(): {
     get best_friend(): Record<PropertyKey, never> | null | undefined;
     set best_friend(value: {
@@ -22,9 +22,9 @@ export type AppUpdatableAssignQuery$data = {
   };
   set me(value: null | undefined);
 };
-export type AppUpdatableAssignQuery = {
-  response: AppUpdatableAssignQuery$data;
-  variables: AppUpdatableAssignQuery$variables;
+export type AppUpdatableAssignFriendQuery = {
+  response: AppUpdatableAssignFriendQuery$data;
+  variables: AppUpdatableAssignFriendQuery$variables;
 };
 
 const node: ConcreteUpdatableQuery = {
@@ -32,7 +32,7 @@ const node: ConcreteUpdatableQuery = {
     "argumentDefinitions": [],
     "kind": "Fragment",
     "metadata": null,
-    "name": "AppUpdatableAssignQuery",
+    "name": "AppUpdatableAssignFriendQuery",
     "selections": [
       {
         "alias": null,
@@ -68,6 +68,6 @@ const node: ConcreteUpdatableQuery = {
   "kind": "UpdatableQuery"
 };
 
-(node as any).hash = "cd353bb97b8354b950635eba98dd7d71";
+(node as any).hash = "82ac9f6ba630f141abc792921c715cf9";
 
 export default node;

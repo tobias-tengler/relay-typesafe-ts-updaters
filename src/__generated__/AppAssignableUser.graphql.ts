@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<df5fb38a4764c71c2d464e73e849ce0f>>
+ * @generated SignedSource<<7348647f20d345e6456274b7b9f2624d>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -19,11 +19,11 @@ export default node;
 export function validate(value: {
   readonly __typename: string;
   readonly __id: string;
-  readonly " $fragmentSpreads": AppAssignableUser$fragmentType;
+  readonly " $fragmentSpreads": FragmentRefs<"AppAssignableUser">;
 }): false | {
   readonly __typename: "User";
   readonly __id: string;
-  readonly " $fragmentSpreads": AppAssignableUser$fragmentType;
+  readonly " $fragmentSpreads": FragmentRefs<"AppAssignableUser">;
 } {
   return value.__typename === 'User' ? value : false;
 }

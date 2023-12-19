@@ -1,6 +1,7 @@
 type Query {
     me: User!
     otherUser: User!
+    item: Item
 }
 
 
@@ -8,4 +9,22 @@ type User {
     id: ID!
     name: String
     best_friend: User
+    myItem: Item
+}
+
+interface Item {
+  id: ID!
+  name: String
+}
+
+type MyItem implements Item {
+  id: ID!
+  name: String
+  giftedBy: User
+}
+
+type FriendsItem implements Item {
+  id: ID!
+  name: String
+  boughtAt: String
 }

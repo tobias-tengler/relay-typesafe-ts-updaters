@@ -4,8 +4,10 @@ import { useLazyLoadQuery,graphql, useRelayEnvironment, commitLocalUpdate } from
 import { AppQuery } from './__generated__/AppQuery.graphql'
 import { AppUpdatableQuery } from './__generated__/AppUpdatableQuery.graphql'
 import { AppAssignableQuery } from './__generated__/AppAssignableQuery.graphql'
-import {AppUpdatableAssignQuery} from './__generated__/AppUpdatableAssignQuery.graphql'
-import { validate } from './__generated__/AppAssignableUser.graphql'
+import { validate as validateUser } from './__generated__/AppAssignableUser.graphql'
+import { validate as validateItem } from './__generated__/AppAssignableItem.graphql'
+import { AppUpdatableAssignFriendQuery } from './__generated__/AppUpdatableAssignFriendQuery.graphql'
+import { AppUpdatableAssignItemQuery } from './__generated__/AppUpdatableAssignItemQuery.graphql'
 
 export default function App() {
   return <Suspense fallback={<div>Loading...</div>}>
@@ -48,6 +50,10 @@ graphql`fragment AppAssignableUser on User @assignable {
   __typename
 }`
 
+graphql`fragment AppAssignableItem on Item @assignable {
+  __typename
+}`
+
 function Assignable() {
   const queryData = useLazyLoadQuery<AppAssignableQuery>(graphql`query AppAssignableQuery {
     me {
@@ -55,10 +61,25 @@ function Assignable() {
       best_friend {
         name
       }
+      myItem {
+        name
+      }
     }
     otherUser {
       name
       ...AppAssignableUser
+    }
+    item {
+      name
+      ...AppAssignableItem
+      ... on MyItem {
+        giftedBy {
+          name
+        }
+      }
+      ... on FriendsItem {
+        boughtAt
+      }
     }
   }`, {})
 
@@ -66,7 +87,7 @@ function Assignable() {
 
   const handleAssignFriend = () => {
     commitLocalUpdate(environment, store => {
-      const {updatableData} = store.readUpdatableQuery<AppUpdatableAssignQuery>(graphql`query AppUpdatableAssignQuery @updatable {
+      const {updatableData} = store.readUpdatableQuery<AppUpdatableAssignFriendQuery>(graphql`query AppUpdatableAssignFriendQuery @updatable {
         me {
           best_friend {
            ...AppAssignableUser
@@ -75,7 +96,7 @@ function Assignable() {
       }`, {})
 
       if(updatableData.me != null) {
-        const validUser = validate(queryData.otherUser)
+        const validUser = validateUser(queryData.otherUser)
 
         if(validUser) {
           updatableData.me.best_friend = validUser;
@@ -84,9 +105,33 @@ function Assignable() {
     })
   }
 
+  const handleAssignItem = () => {
+    commitLocalUpdate(environment, store => {
+      const {updatableData} = store.readUpdatableQuery<AppUpdatableAssignItemQuery>(graphql`query AppUpdatableAssignItemQuery @updatable {
+        me {
+          myItem {
+           ...AppAssignableItem
+          }
+        }
+      }`, {})
+
+      if(updatableData.me != null && queryData.item != null) {
+        const validItem = validateItem(queryData.item)
+
+        console.log({updatableData, validItem, newItem: queryData.item})
+
+        if(validItem) {
+          updatableData.me.myItem = validItem;
+        }
+      }
+    })
+  }
+
   return <div>
     <div>My friend's name: {queryData.me.best_friend?.name ?? "Unknown"}</div>
+    <div>My Item's name: {queryData.me.myItem?.name ?? "Unknown"}</div>
 
     <button onClick={handleAssignFriend}>Assign friend</button>
+    <button onClick={handleAssignItem}>Assign item</button>
   </div>
 }
